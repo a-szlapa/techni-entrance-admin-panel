@@ -22,8 +22,10 @@ export default function PanelLayout() {
   return (
     <SidebarProvider>
       <PanelSidebar />
-      <main className="flex flex-col flex-1">
-        <Outlet />
+      <main className="flex flex-col flex-1 items-center">
+        <div className="flex flex-col container flex-1 h-0">
+          <Outlet />
+        </div>
       </main>
     </SidebarProvider>
   );

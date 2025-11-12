@@ -10,6 +10,9 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import { ThemeProvider } from "./components/theme-provider";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -35,9 +38,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-          {children}
-          <ScrollRestoration />
-          <Scripts />
+          <QueryClientProvider client={queryClient}>
+            {children}
+            <ScrollRestoration />
+            <Scripts />
+          </QueryClientProvider>
         </ThemeProvider>
       </body>
     </html>
