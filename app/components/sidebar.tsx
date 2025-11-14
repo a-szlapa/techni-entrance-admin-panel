@@ -11,7 +11,7 @@ import {
   SidebarFooter,
 } from "./ui/sidebar";
 import { Button } from "./ui/button";
-import { Users, LogOut } from "lucide-react";
+import { Users, LogOut, KeyRound, ClipboardClock } from "lucide-react";
 import { useNavigate } from "react-router";
 
 export default function PanelSidebar() {
@@ -47,8 +47,16 @@ export default function PanelSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <a href="/logs">
-                    <LogOut />
+                    <ClipboardClock />
                     <span>Logs</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <a href="/user-logs">
+                    <KeyRound />
+                    <span>Admin Logs</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>

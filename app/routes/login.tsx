@@ -17,7 +17,7 @@ const LoginPage: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAdmin) {
+    if (isAdmin === true) {
       navigate("/");
     }
   }, [isAdmin]);

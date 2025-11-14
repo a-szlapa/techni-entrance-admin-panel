@@ -9,7 +9,7 @@ export default function PanelLayout() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isAdmin) {
+    if (isAdmin === false) {
       navigate("/login");
     }
   }, [isAdmin]);
